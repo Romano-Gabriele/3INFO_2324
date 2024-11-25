@@ -1,7 +1,15 @@
-function begin() {
-    let username = prompt("Inserire Username");
+function pass() {
+    let password = prompt("Inserire Password") || alert("Canceled");
+    password == null || password == "Agnell1no" || alert("Wrong password");
+    password == "Agnell1no" && alert("Welcome!");
+}
 
-    if(username != "Admin") {
+function begin() {
+    let username = prompt("Inserire Username") || alert("Canceled");
+    username == null || username == "Admin" || alert("I don't know you");
+    username == "Admin" && pass();
+
+    /*if(username != "Admin") {
         if(username == null)
             alert("Canceled");
         else
@@ -19,7 +27,5 @@ function begin() {
             alert("Wrong password");
 
         return 0;
-    }
-
-    alert("Welcome!");
+    }*/
 }
