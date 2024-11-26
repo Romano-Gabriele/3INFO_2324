@@ -15,7 +15,7 @@
         console.log("CREATE", todo);
         //aggiorno la todo list
         todos = [...todos, todo];
-    }
+    };
 </script>
 
 <h1>ToDos</h1>

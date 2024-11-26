@@ -4,6 +4,10 @@
     import Priority from "./priority.svelte";
 
     export let todo;
+
+    const toggle_status = () => {
+        todo.done = !todo.done;
+    }
 </script>
 
 <Cell>
@@ -11,9 +15,9 @@
 </Cell>
 <Cell>
     {#if todo.done == false}
-        <Icon name="circle"></Icon>
+        <Icon name="circle" handler={toggle_status}></Icon>
     {:else}
-        <Icon name="task_alt"></Icon>
+        <Icon name="task_alt" handler={toggle_status}></Icon>
     {/if}
 </Cell>
 <Cell>
