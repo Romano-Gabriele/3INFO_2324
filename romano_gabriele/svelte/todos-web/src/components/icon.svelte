@@ -5,9 +5,10 @@
 
 <script>
     export let name;
+    export let handler = () => {}; //handler di default
 </script>
 
-<span class="material-symbols-outlined icon">
+<span class="material-symbols-outlined icon" on:click={handler}>
     {name}
 </span>
 
