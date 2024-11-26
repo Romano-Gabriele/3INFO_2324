@@ -16,6 +16,15 @@
         //aggiorno la todo list
         todos = [...todos, todo];
     };
+
+    const change_todo_item = async (e) => {
+        delete_item(e.detail.id);
+    }
+
+    const delete_item = (id) => {
+        console.log("DELETE", id);
+        todos = todos.filter(t => t.id != id);
+    }
 </script>
 
 <h1>ToDos</h1>
@@ -28,7 +37,7 @@
 
     <!-- ToDo Items -->
      {#each todos as todo}
-        <TodoItem todo={todo}></TodoItem>
+        <TodoItem todo={todo} on:change{change_todo_item}></TodoItem>
      {/each}
 </div>
 
