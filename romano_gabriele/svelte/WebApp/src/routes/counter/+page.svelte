@@ -12,6 +12,10 @@ import Counter from "../../lib/components/counter.svelte";
         doppio = contatore * 2;
         sottolineato = !(contatore % 2);
     }
+
+    function gestisci_evento(evento) {
+        alert(`${evento.detail.tipo} -- ${evento.detail.valore}`);
+    }
 </script>
 
 <h1>Pagina Counter!!!</h1>
@@ -30,7 +34,7 @@ import Counter from "../../lib/components/counter.svelte";
 
 <h2>Il suo doppio vale {doppio}</h2>
 
-<Counter bind:counter={contatore}></Counter>
+<Counter bind:counter={contatore} on:contatore={gestisci_evento}></Counter>
 
 <h2>Il valore del contatore double vale: {doubleContatore}</h2>
 

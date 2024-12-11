@@ -4,6 +4,9 @@
 </svelte:head>
 
 <script>
+    import { createEventDispatcher } from "svelte";
+
+    const despatch = createEventDispatcher();
     export let counter = 0;
 
     function counter_incr() {
@@ -12,6 +15,12 @@
 
     function counter_decr() {
         counter -= 3;
+    }
+
+    function emit_event() {
+        despatch("doublecontatore", {
+            valore: counter
+        })
     }
 </script>
 
